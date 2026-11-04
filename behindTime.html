@@ -1,0 +1,552 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Behind Time | TaleVerse</title>
+
+  <meta name="description" content="Emma has disappeared, leaving behind questions that refuse to stay unanswered. Discover Behind Time, a mystery and psychological thriller chat-based game by TaleVerse.">
+
+  <meta property="og:title" content="Behind Time | TaleVerse">
+  <meta property="og:description" content="Some disappearances are only the beginning. Enter the mystery of Behind Time.">
+  <meta name="theme-color" content="#08080b">
+
+  <link rel="icon" href="/assets/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/style.css">
+
+  <style>
+    /* BEHIND TIME PAGE */
+
+    .game-hero {
+      min-height: 570px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 7rem 1.5rem 6rem;
+    }
+
+    .game-hero-content {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .game-label {
+      color: var(--gold);
+      font-family: "Cinzel", serif;
+      font-size: .85rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+    }
+
+    .game-hero h1 {
+      font-size: clamp(3rem, 9vw, 6rem);
+      color: var(--gold2);
+      margin: 1rem 0;
+      text-shadow: 0 0 35px #c9a24b30;
+    }
+
+    .game-subtitle {
+      color: var(--gold);
+      font-size: 1.5rem;
+      font-style: italic;
+      margin-bottom: 1.5rem;
+    }
+
+    .game-description {
+      max-width: 720px;
+      margin: 0 auto 2rem;
+      color: var(--text);
+      font-size: 1.2rem;
+      line-height: 1.9;
+    }
+
+    .game-status {
+      display: inline-block;
+      padding: .4rem 1rem;
+      border: 1px solid #c9a24b70;
+      color: var(--gold2);
+      font-family: "Cinzel", serif;
+      font-size: .75rem;
+      letter-spacing: .12em;
+      margin-bottom: 1.5rem;
+    }
+
+    .game-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: .8rem;
+      margin-top: 2rem;
+    }
+
+    .game-section {
+      padding: 4rem 0;
+    }
+
+    .section-intro {
+      max-width: 700px;
+      color: var(--mute);
+      font-size: 1.1rem;
+      margin-top: -1rem;
+      margin-bottom: 2rem;
+    }
+
+    /* VIDEO */
+
+    .video-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: rgba(10, 8, 12, .9);
+      border: 1px solid var(--line);
+      overflow: hidden;
+      box-shadow: 0 15px 50px #0008;
+    }
+
+    .video-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--mute);
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    .video-placeholder span {
+      font-size: 3rem;
+      color: var(--gold);
+      margin-bottom: .7rem;
+    }
+
+    .video-placeholder p {
+      margin: 0;
+    }
+
+    .video-placeholder small {
+      color: var(--gold);
+      margin-top: .5rem;
+    }
+
+    .video-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* SCREENSHOTS */
+
+    .screenshots-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+
+    .screenshot-placeholder {
+      aspect-ratio: 16 / 9;
+      background: rgba(15, 12, 16, .85);
+      border: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--mute);
+      overflow: hidden;
+    }
+
+    .screenshot-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* FEATURES AND HOW TO PLAY */
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+
+    .feature-item {
+      background: rgba(15, 12, 16, .85);
+      border: 1px solid var(--line);
+      padding: 1.5rem;
+      transition: border-color .3s ease;
+    }
+
+    .feature-item:hover {
+      border-color: #c9a24b80;
+    }
+
+    .feature-item h3 {
+      color: var(--gold2);
+      font-size: 1.15rem;
+      margin: 0 0 .5rem;
+    }
+
+    .feature-item p {
+      color: var(--mute);
+      margin: 0;
+    }
+
+    /* DOWNLOAD SECTION */
+
+    .download-section {
+      text-align: center;
+      padding: 5rem 1.5rem;
+      background: rgba(8, 7, 10, .78);
+      border-top: 1px solid #c9a24b30;
+      border-bottom: 1px solid #c9a24b30;
+    }
+
+    .download-section h2 {
+      margin-bottom: 1rem;
+    }
+
+    .download-section p {
+      max-width: 650px;
+      margin: 0 auto 1.5rem;
+      color: var(--mute);
+      font-size: 1.15rem;
+    }
+
+    .platform-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .platform-links .btn {
+      min-width: 190px;
+    }
+
+    @media (max-width: 720px) {
+      .game-hero {
+        min-height: 480px;
+        padding: 5rem 1.2rem;
+      }
+
+      .game-section {
+        padding: 3rem 0;
+      }
+
+      .screenshots-grid,
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .game-buttons .btn {
+        width: 100%;
+        max-width: 280px;
+      }
+
+      .platform-links {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .platform-links .btn {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="/">
+      <span class="logo"></span>
+      TaleVerse
+    </a>
+
+    <nav aria-label="Main">
+      <a href="/">Home</a>
+      <a href="/games.html" aria-current="page">Games</a>
+      <a href="/news.html">News</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+
+<main>
+
+  <!-- GAME INTRODUCTION -->
+
+  <section class="game-hero">
+    <div class="game-hero-content">
+
+      <div class="game-label">A TaleVerse Game</div>
+
+      <h1>Behind Time</h1>
+
+      <div class="game-subtitle">
+        Some disappearances are only the beginning.
+      </div>
+
+      <div class="game-status">
+        COMPLETE GAME · ALL CHAPTERS AVAILABLE
+      </div>
+
+      <p class="game-description">
+        Emma has disappeared, leaving behind questions that refuse
+        to stay unanswered.
+
+        As the search for the truth unfolds, hidden details begin
+        to surface, and every discovery brings new questions.
+
+        What really happened to Emma? And how much of the truth
+        has been left behind?
+      </p>
+
+      <div class="game-buttons">
+        <a class="btn solid" href="#download">Play Behind Time</a>
+        <a class="btn" href="#trailer">Watch Trailer</a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- PROMOTIONAL VIDEO -->
+
+  <section class="game-section" id="trailer">
+    <div class="wrap">
+
+      <h2>Official Trailer</h2>
+
+      <p class="section-intro">
+        Take a first look into the mystery of Behind Time.
+      </p>
+
+      <div class="video-frame">
+
+        <!-- YOUTUBE VIDEO WILL BE ADDED HERE -->
+
+        <div class="video-placeholder">
+          <span>▶</span>
+          <p>Behind Time Official Trailer</p>
+          <small>Promotional video coming soon</small>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- SCREENSHOTS -->
+
+  <section class="game-section">
+    <div class="wrap">
+
+      <h2>Inside Behind Time</h2>
+
+      <p class="section-intro">
+        A closer look at the conversations, discoveries,
+        and moments waiting inside the game.
+      </p>
+
+      <div class="screenshots-grid">
+
+        <!-- GAME SCREENSHOT 1 -->
+        <div class="screenshot-placeholder">
+          <span>Screenshot 01</span>
+        </div>
+
+        <!-- GAME SCREENSHOT 2 -->
+        <div class="screenshot-placeholder">
+          <span>Screenshot 02</span>
+        </div>
+
+        <!-- GAME SCREENSHOT 3 -->
+        <div class="screenshot-placeholder">
+          <span>Screenshot 03</span>
+        </div>
+
+        <!-- GAME SCREENSHOT 4 -->
+        <div class="screenshot-placeholder">
+          <span>Screenshot 04</span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- GAME FEATURES -->
+
+  <section class="game-section">
+    <div class="wrap">
+
+      <h2>Game Features</h2>
+
+      <p class="section-intro">
+        Discover what makes Behind Time an experience worth entering.
+      </p>
+
+      <div class="feature-grid">
+
+        <!-- FEATURES WILL BE ADDED LATER -->
+
+        <div class="feature-item">
+          <h3>Story-Driven Experience</h3>
+          <p>Discover a mystery that unfolds through conversations and hidden details.</p>
+        </div>
+
+        <div class="feature-item">
+          <h3>Chat-Based Gameplay</h3>
+          <p>Experience the story through messages, conversations, and digital interactions.</p>
+        </div>
+
+        <div class="feature-item">
+          <h3>Mystery and Suspense</h3>
+          <p>Follow the clues and uncover the truth behind Emma's disappearance.</p>
+        </div>
+
+        <div class="feature-item">
+          <h3>Complete Story</h3>
+          <p>All chapters are available. Experience the full story from beginning to end.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- HOW TO PLAY -->
+
+  <section class="game-section">
+    <div class="wrap">
+
+      <h2>How To Play</h2>
+
+      <p class="section-intro">
+        Your journey into Behind Time starts with a few simple steps.
+      </p>
+
+      <div class="feature-grid">
+
+        <div class="feature-item">
+          <h3>01. Choose Your Platform</h3>
+          <p>Download the game using one of the available platforms below.</p>
+        </div>
+
+        <div class="feature-item">
+          <h3>02. Start the Game</h3>
+          <p>Open Behind Time and begin your journey into Emma's disappearance.</p>
+        </div>
+
+        <div class="feature-item">
+          <h3>03. Explore the Conversations</h3>
+          <p>Read messages, follow conversations, and pay attention to the details.</p>
+        </div>
+
+        <div class="feature-item">
+          <h3>04. Uncover the Truth</h3>
+          <p>Follow the story until the mystery begins to reveal itself.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- DOWNLOAD LINKS -->
+
+  <section class="download-section" id="download">
+
+    <div class="wrap">
+
+      <h2>Start Your Journey</h2>
+
+      <p>
+        Start your journey in <em>Behind Time</em> today!
+        Choose your platform and dive into the mystery.
+      </p>
+
+      <div class="platform-links">
+
+        <a class="btn solid"
+           href="https://gamejolt.com/games/behindTime/989011"
+           target="_blank"
+           rel="noopener noreferrer">
+          GAME JOLT
+        </a>
+
+        <a class="btn"
+           href="https://appgallery.huawei.com/app/C116496701"
+           target="_blank"
+           rel="noopener noreferrer">
+          HUAWEI APPGALLERY
+        </a>
+
+        <a class="btn"
+           href="https://apkpure.com/p/com.taleverse.behindtime"
+           target="_blank"
+           rel="noopener noreferrer">
+          APKPURE
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="wrap">
+
+    <div class="brand" style="justify-content:center">
+      <span class="logo"></span>
+      TaleVerse
+    </div>
+
+    <p class="tag" data-site="tagline"></p>
+
+    <div class="socials" style="justify-content:center"></div>
+
+    <small data-site="footer_note"></small>
+
+    <p style="margin-top:1rem;font-size:.9rem">
+      <a href="/privacy.html"
+         style="color:var(--mute);text-decoration:none">
+        Privacy Policy
+      </a>
+    </p>
+
+  </div>
+</footer>
+
+<script src="/assets/app.js"></script>
+
+</body>
+</html>
