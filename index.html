@@ -26,14 +26,14 @@
     <a class="brand" href="/">
       <span class="logo"></span>TaleVerse
     </a>
-<nav aria-label="Main">
-  <a href="/">Home</a>
-  <a href="/behind-time.html">Behind Time</a>
-  <a href="/hollowmere.html">Hollowmere</a>
-  <a href="/news.html">News</a>
-  <a href="/contact.html">Contact</a>
-</nav>
 
+    <nav aria-label="Main">
+      <a href="/">Home</a>
+      <a href="/behind-time.html">Behind Time</a>
+      <a href="/hollowmere.html">Hollowmere</a>
+      <a href="/news.html">News</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
   </div>
 </header>
 
@@ -43,11 +43,15 @@
     <div class="hero">
       <div class="logo"></div>
       <h1>TaleVerse</h1>
+
       <p class="tag" data-site="tagline"></p>
       <p class="intro" data-site="intro"></p>
 
-      <a class="btn solid" href="/games.html">Explore games</a>
-      <a class="btn" href="/news.html">Read news</a>
+      <div class="hero-buttons">
+        <a class="btn solid" href="/behind-time.html">Behind Time</a>
+        <a class="btn" href="/hollowmere.html">Hollowmere</a>
+        <a class="btn" href="/news.html">Read news</a>
+      </div>
 
       <div class="socials" style="justify-content:center"></div>
     </div>
@@ -55,14 +59,18 @@
     <section>
       <h2>Featured games</h2>
       <div class="grid" id="featured-games"></div>
+
       <p class="more">
-        <a href="/games.html">All games</a>
+        <a href="/behind-time.html">Discover Behind Time</a>
+        <span> · </span>
+        <a href="/hollowmere.html">Discover Hollowmere</a>
       </p>
     </section>
 
     <section>
       <h2>Latest news</h2>
       <div class="grid" id="news-list" data-limit="3"></div>
+
       <p class="more">
         <a href="/news.html">All news</a>
       </p>
