@@ -1,6 +1,6 @@
 {
   "title": "Hollowmere",
-  "description": "A mysterious town hiding secrets beneath its quiet surface. Follow the conversations, investigate strange digital records, and uncover the truth behind Hollowmere. But be careful. Some secrets were never meant to be found.",
+  "description": "a town lost in the fog, where empty eyes hide darker truths and whispers echo behind locked doors.\nOne night, a desperate message reaches you from someone trapped inside. The town is consuming its people, one by one. But who can you trust when no one is what they seem?\nYou’ll talk. You’ll listen. You’ll choose. Every decision brings you closer to the truth… or deeper into Hollowmere.\n**Save them before you become one of the lost.**",
   "youtube": "https://youtu.be/Zn_4GgWGblM?si=VuMzaTFlj9_6BIFw",
   "screenshots": [
     "/assets/uploads/1793793805279.jpg",
@@ -11,11 +11,19 @@
     "/assets/uploads/1793794084109.jpg"
   ],
   "features": [
-    "Dark Mystery and Psychological Suspense",
-    "Chat-Based Gameplay",
-    "Interactive Investigations",
-    "Hidden Clues and Puzzles",
-    "Choices and Consequences"
+    "Your Choices Decide Who Survives: Every message matters, one wrong word could seal your fate.",
+    "Uncover the Town’s Dark Secrets: Explore hidden truths and face what the people of Hollowmere tried to bury.",
+    "Chat with the Lost: Every conversation brings you closer to the one who called for help… or to becoming the next lost soul."
   ],
-  "how_to_play": "1. Enter Hollowmere and explore the conversations.\n2. Follow clues and investigate digital records.\n3. Solve puzzles and connect the hidden details.\n4. Discover the secrets buried beneath the town."
+  "how_to_play": "Read & Respond: Experience the story through interactive chat messages.\nMake Choices: Your decisions shape the story and lead to different outcomes.\nUncover Clues: Find hidden details, solve puzzles, and piece together the mystery.\nInteract with Characters: Talk to various characters and discover their secrets.",
+  "platforms": [
+    {
+      "name": "Game Jolt",
+      "url": "https://gamejolt.com/games/Hollowmere/1024633"
+    },
+    {
+      "name": "ApkPure",
+      "url": "https://apkpure.com/p/com.TaleVerse.TheHollowTown"
+    }
+  ]
 }
