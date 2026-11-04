@@ -24,6 +24,25 @@ content:
           - {name: chapters, label: Chapters / release info, type: string}
           - {name: button_label, label: Button text, type: string}
           - {name: link, label: Download or store link, type: string}
+          - {name: youtube, label: YouTube video URL, type: string}
+          - name: screenshots
+            label: Screenshots
+            type: image
+            list: true
+          - name: features
+            label: Game features
+            type: string
+            list: true
+          - name: how_to_play
+            label: How to play
+            type: text
+          - name: platforms
+            label: Download platforms
+            type: object
+            list: true
+            fields:
+              - {name: name, label: Platform name, type: string}
+              - {name: url, label: Download URL, type: string}
 
   - name: news
     label: News
