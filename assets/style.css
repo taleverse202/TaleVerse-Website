@@ -1,6 +1,6 @@
 
 :root {
-  --bg: #0c0b0d;
+  --bg: #08080b;
   --panel: #151318;
   --panel-hover: #1d1920;
   --line: #332b30;
@@ -21,32 +21,38 @@ html {
 
 body {
   margin: 0;
-  background:
-    radial-gradient(
-      ellipse at 50% -10%,
-      #49351b55 0%,
-      #29201330 25%,
-      transparent 60%
-    ),
-    radial-gradient(
-      ellipse at 0% 45%,
-      #38232b20 0%,
-      transparent 45%
-    ),
-    radial-gradient(
-      ellipse at 100% 80%,
-      #47351c18 0%,
-      transparent 42%
-    ),
-    linear-gradient(
-      135deg,
-      #100e11 0%,
-      #0c0b0d 45%,
-      #100d10 100%
-    );
-  background-attachment: fixed;
+  position: relative;
+  background: #08080b;
   color: var(--text);
   font: 1rem/1.75 "Cormorant Garamond", Georgia, serif;
+}
+
+/* CINEMATIC BACKGROUND */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(5, 5, 8, .42) 0%,
+      rgba(5, 5, 8, .58) 40%,
+      rgba(5, 5, 8, .82) 100%
+    ),
+    url("/assets/uploads/taleverse-background.png");
+
+  background-size: cover;
+  background-position: center 25%;
+  background-repeat: no-repeat;
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
 }
 
 h1, h2, h3, .brand {
@@ -77,14 +83,14 @@ textarea:focus-visible {
 /* HEADER */
 
 header {
-  border-bottom: 1px solid #c9a24b20;
+  border-bottom: 1px solid #c9a24b25;
   position: sticky;
   top: 0;
-  background: #100e11e8;
+  background: rgba(8, 7, 10, .88);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   z-index: 5;
-  box-shadow: 0 5px 25px #0003;
+  box-shadow: 0 5px 25px #0005;
 }
 
 header .wrap {
@@ -229,11 +235,7 @@ h2 {
 /* GAME CARDS */
 
 .card {
-  background: linear-gradient(
-    145deg,
-    #1b171c,
-    #121015
-  );
+  background: rgba(15, 12, 16, .88);
   border: 1px solid var(--line);
   border-radius: 5px;
   overflow: hidden;
@@ -244,6 +246,8 @@ h2 {
     transform .35s ease,
     border-color .35s ease,
     box-shadow .35s ease;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .card:hover {
@@ -252,7 +256,7 @@ h2 {
   box-shadow: 0 18px 45px #0008, 0 0 25px #c9a24b0b;
 }
 
-/* SAME ARTWORK AREA FOR EVERY GAME */
+/* GAME ARTWORK */
 
 .card .img {
   position: relative;
@@ -263,7 +267,7 @@ h2 {
   overflow: hidden;
   display: grid;
   place-items: center;
-  background: #0d0b0e;
+  background: rgba(8, 7, 10, .85);
 }
 
 .card .img img {
@@ -312,7 +316,7 @@ h2 {
   text-align: center;
 }
 
-/* REMOVE OLD FEATURED CARD STRETCHING */
+/* FEATURED CARD */
 
 .card.featured {
   grid-column: auto;
@@ -352,7 +356,7 @@ label {
 input,
 textarea {
   width: 100%;
-  background: #151318;
+  background: rgba(15, 12, 16, .92);
   border: 1px solid var(--line);
   border-radius: 3px;
   color: var(--text);
@@ -425,11 +429,9 @@ footer {
   text-align: center;
   color: var(--mute);
   margin-top: 2rem;
-  background: linear-gradient(
-    180deg,
-    #100e1100,
-    #100e116e
-  );
+  background: rgba(8, 7, 10, .82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 /* DIALOG */
@@ -457,6 +459,10 @@ dialog img {
 /* MOBILE */
 
 @media (max-width: 720px) {
+  body::before {
+    background-position: center top;
+  }
+
   header .wrap {
     min-height: 68px;
   }
