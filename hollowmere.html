@@ -1,0 +1,542 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Hollowmere | TaleVerse</title>
+
+  <meta name="description" content="Something is wrong in Hollowmere. Explore a dark mystery where every conversation hides a secret and every discovery leads to more questions.">
+  <meta property="og:title" content="Hollowmere | TaleVerse">
+  <meta property="og:description" content="Hollowmere is alive. And something beneath its surface is waiting.">
+  <meta name="theme-color" content="#08080b">
+
+  <link rel="icon" href="/assets/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/style.css">
+
+  <style>
+    /* HOLLOWMERE PAGE */
+
+    .game-hero {
+      min-height: 570px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 7rem 1.5rem 6rem;
+    }
+
+    .game-hero-content {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .game-label {
+      color: var(--gold);
+      font-family: "Cinzel", serif;
+      font-size: .85rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+    }
+
+    .game-hero h1 {
+      font-size: clamp(3rem, 9vw, 6rem);
+      color: var(--gold2);
+      margin: 1rem 0;
+      text-shadow: 0 0 35px #c9a24b30;
+    }
+
+    .game-subtitle {
+      color: var(--gold);
+      font-size: 1.5rem;
+      font-style: italic;
+      margin-bottom: 1.5rem;
+    }
+
+    .game-description {
+      max-width: 720px;
+      margin: 0 auto 2rem;
+      color: var(--text);
+      font-size: 1.2rem;
+      line-height: 1.9;
+    }
+
+    .game-status {
+      display: inline-block;
+      padding: .4rem 1rem;
+      border: 1px solid #c9a24b70;
+      color: var(--gold2);
+      font-family: "Cinzel", serif;
+      font-size: .75rem;
+      letter-spacing: .12em;
+      margin-bottom: 1.5rem;
+    }
+
+    .game-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: .8rem;
+      margin-top: 2rem;
+    }
+
+    .game-section {
+      padding: 4rem 0;
+    }
+
+    .section-intro {
+      max-width: 700px;
+      color: var(--mute);
+      font-size: 1.1rem;
+      margin-top: -1rem;
+      margin-bottom: 2rem;
+    }
+
+    /* VIDEO */
+
+    .video-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: rgba(10, 8, 12, .9);
+      border: 1px solid var(--line);
+      overflow: hidden;
+      box-shadow: 0 15px 50px #0008;
+    }
+
+    .video-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--mute);
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    .video-placeholder span {
+      font-size: 3rem;
+      color: var(--gold);
+      margin-bottom: .7rem;
+    }
+
+    .video-placeholder p {
+      margin: 0;
+    }
+
+    .video-placeholder small {
+      color: var(--gold);
+      margin-top: .5rem;
+    }
+
+    .video-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* SCREENSHOTS */
+
+    .screenshots-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+
+    .screenshot-placeholder {
+      aspect-ratio: 16 / 9;
+      background: rgba(15, 12, 16, .85);
+      border: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--mute);
+      overflow: hidden;
+    }
+
+    .screenshot-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* FEATURES AND HOW TO PLAY */
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+
+    .feature-item {
+      background: rgba(15, 12, 16, .85);
+      border: 1px solid var(--line);
+      padding: 1.5rem;
+      transition: border-color .3s ease;
+    }
+
+    .feature-item:hover {
+      border-color: #c9a24b80;
+    }
+
+    .feature-item h3 {
+      color: var(--gold2);
+      font-size: 1.15rem;
+      margin: 0 0 .5rem;
+    }
+
+    .feature-item p {
+      color: var(--mute);
+      margin: 0;
+    }
+
+    /* DOWNLOAD SECTION */
+
+    .download-section {
+      text-align: center;
+      padding: 5rem 1.5rem;
+      background: rgba(8, 7, 10, .78);
+      border-top: 1px solid #c9a24b30;
+      border-bottom: 1px solid #c9a24b30;
+    }
+
+    .download-section h2 {
+      margin-bottom: 1rem;
+    }
+
+    .download-section p {
+      max-width: 650px;
+      margin: 0 auto 1.5rem;
+      color: var(--mute);
+      font-size: 1.15rem;
+    }
+
+    .platform-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .platform-links .btn {
+      min-width: 190px;
+    }
+
+    @media (max-width: 720px) {
+      .game-hero {
+        min-height: 480px;
+        padding: 5rem 1.2rem;
+      }
+
+      .game-section {
+        padding: 3rem 0;
+      }
+
+      .screenshots-grid,
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .game-buttons .btn {
+        width: 100%;
+        max-width: 280px;
+      }
+
+      .platform-links {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .platform-links .btn {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="/">
+      <span class="logo"></span>
+      TaleVerse
+    </a>
+
+    <nav aria-label="Main">
+      <a href="/">Home</a>
+      <a href="/games.html" aria-current="page">Games</a>
+      <a href="/news.html">News</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+
+<main>
+
+  <!-- GAME INTRODUCTION -->
+
+  <section class="game-hero">
+    <div class="game-hero-content">
+
+      <div class="game-label">A TaleVerse Game</div>
+
+      <h1>Hollowmere</h1>
+
+      <div class="game-subtitle">
+        Some places don't let go of their secrets.
+      </div>
+
+      <div class="game-status">
+        CHAPTER 2 RELEASED · CHAPTER 3 IN DEVELOPMENT
+      </div>
+
+      <p class="game-description">
+        Welcome to Hollowmere, a town where strange things are
+        happening and the truth is buried deeper than anyone
+        wants to admit.
+
+        Through conversations, hidden records, and unexpected
+        discoveries, you'll begin to uncover a mystery that
+        connects the town, its residents, and something far
+        older than its walls.
+
+        But be careful. Not everyone wants the truth to surface.
+      </p>
+
+      <div class="game-buttons">
+        <a class="btn solid" href="#download">Enter Hollowmere</a>
+        <a class="btn" href="#trailer">Watch Trailer</a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- PROMOTIONAL VIDEO -->
+
+  <section class="game-section" id="trailer">
+    <div class="wrap">
+
+      <h2>Official Trailer</h2>
+
+      <p class="section-intro">
+        Take a first look into the secrets hidden beneath Hollowmere.
+      </p>
+
+      <div class="video-frame">
+
+        <!-- YOUTUBE VIDEO WILL BE ADDED HERE -->
+
+        <div class="video-placeholder">
+          <span>▶</span>
+          <p>Hollowmere Official Trailer</p>
+          <small>Promotional video coming soon</small>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- SCREENSHOTS -->
+
+  <section class="game-section">
+    <div class="wrap">
+
+      <h2>Inside Hollowmere</h2>
+
+      <p class="section-intro">
+        Explore the conversations, digital traces, and discoveries
+        waiting inside the town.
+      </p>
+
+      <div class="screenshots-grid">
+
+        <!-- GAME SCREENSHOT 1 -->
+        <div class="screenshot-placeholder">
+          <span>Screenshot 01</span>
+        </div>
+
+        <!-- GAME SCREENSHOT 2 -->
+        <div class="screenshot-placeholder">
+          <span>Screenshot 02</span>
+        </div>
+
+        <!-- GAME SCREENSHOT 3 -->
+        <div class="screenshot-placeholder">
+          <span>Screenshot 03</span>
+        </div>
+
+        <!-- GAME SCREENSHOT 4 -->
+        <div class="screenshot-placeholder">
+          <span>Screenshot 04</span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- GAME FEATURES -->
+
+  <section class="game-section">
+    <div class="wrap">
+
+      <h2>Game Features</h2>
+
+      <p class="section-intro">
+        Every conversation may reveal something. Every discovery
+        may change what you thought you knew.
+      </p>
+
+      <div class="feature-grid">
+
+        <div class="feature-item">
+          <h3>Story-Driven Mystery</h3>
+          <p>Uncover a dark, unfolding mystery through conversations and discoveries.</p>
+        </div>
+
+        <div class="feature-item">
+          <h3>Chat-Based Gameplay</h3>
+          <p>Experience the story through messages, calls, and digital interactions.</p>
+        </div>
+
+        <div class="feature-item">
+          <h3>Hidden Clues and Puzzles</h3>
+          <p>Search through records, investigate details, and connect the clues.</p>
+        </div>
+
+        <div class="feature-item">
+          <h3>A Living Town</h3>
+          <p>Meet residents with their own secrets, motives, and versions of the truth.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- HOW TO PLAY -->
+
+  <section class="game-section">
+    <div class="wrap">
+
+      <h2>How To Play</h2>
+
+      <p class="section-intro">
+        Your investigation begins with a message. What you do next
+        is up to you.
+      </p>
+
+      <div class="feature-grid">
+
+        <div class="feature-item">
+          <h3>01. Enter Hollowmere</h3>
+          <p>Download the game and begin your journey into the town.</p>
+        </div>
+
+        <div class="feature-item">
+          <h3>02. Meet the Residents</h3>
+          <p>Talk to the people of Hollowmere and discover what they know.</p>
+        </div>
+
+        <div class="feature-item">
+          <h3>03. Investigate the Clues</h3>
+          <p>Explore messages, files, records, and hidden information.</p>
+        </div>
+
+        <div class="feature-item">
+          <h3>04. Piece Together the Truth</h3>
+          <p>Connect what you find and decide what to believe.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- DOWNLOAD LINKS -->
+
+  <section class="download-section" id="download">
+
+    <div class="wrap">
+
+      <h2>Enter Hollowmere</h2>
+
+      <p>
+        The town has secrets waiting to be uncovered.
+        Start your journey into Hollowmere today.
+      </p>
+
+      <div class="platform-links">
+
+        <!-- ADD HOLLOWMERE GAME LINKS HERE -->
+
+        <a class="btn solid" href="#download">
+          PLAY HOLLOWMERE
+        </a>
+
+      </div>
+
+      <p style="font-size:.9rem;margin-top:1.5rem">
+        More chapters are in development.
+      </p>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="wrap">
+
+    <div class="brand" style="justify-content:center">
+      <span class="logo"></span>
+      TaleVerse
+    </div>
+
+    <p class="tag" data-site="tagline"></p>
+
+    <div class="socials" style="justify-content:center"></div>
+
+    <small data-site="footer_note"></small>
+
+    <p style="margin-top:1rem;font-size:.9rem">
+      <a href="/privacy.html"
+         style="color:var(--mute);text-decoration:none">
+        Privacy Policy
+      </a>
+    </p>
+
+  </div>
+</footer>
+
+<script src="/assets/app.js"></script>
+
+</body>
+</html>
