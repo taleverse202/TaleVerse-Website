@@ -44,6 +44,60 @@ content:
               - {name: name, label: Platform name, type: string}
               - {name: url, label: Download URL, type: string}
 
+  - name: behind_time
+    label: Behind Time
+    type: file
+    path: content/behind-time.json
+    fields:
+      - {name: title, label: Game title, type: string}
+      - {name: description, label: Description, type: text}
+      - {name: youtube, label: YouTube video URL, type: string}
+      - name: screenshots
+        label: Screenshots
+        type: image
+        list: true
+      - name: features
+        label: Game features
+        type: string
+        list: true
+      - name: how_to_play
+        label: How to play
+        type: text
+      - name: platforms
+        label: Download platforms
+        type: object
+        list: true
+        fields:
+          - {name: name, label: Platform name, type: string}
+          - {name: url, label: Download URL, type: string}
+
+  - name: hollowmere
+    label: Hollowmere
+    type: file
+    path: content/hollowmere.json
+    fields:
+      - {name: title, label: Game title, type: string}
+      - {name: description, label: Description, type: text}
+      - {name: youtube, label: YouTube video URL, type: string}
+      - name: screenshots
+        label: Screenshots
+        type: image
+        list: true
+      - name: features
+        label: Game features
+        type: string
+        list: true
+      - name: how_to_play
+        label: How to play
+        type: text
+      - name: platforms
+        label: Download platforms
+        type: object
+        list: true
+        fields:
+          - {name: name, label: Platform name, type: string}
+          - {name: url, label: Download URL, type: string}
+
   - name: news
     label: News
     type: file
