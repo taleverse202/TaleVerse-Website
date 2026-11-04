@@ -3,7 +3,7 @@
     {
       "title": "Hollowmere",
       "featured": true,
-      "cover": "/assets/uploads/cover.png",
+      "cover": "/assets/uploads/file_00000000ff7c81f4bc224c75c0a1e690.jpg",
       "genre": "Mystery / Psychological Thriller",
       "format": "chat-based game",
       "status": "Chapter 3 in development",
@@ -14,8 +14,8 @@
     },
     {
       "title": "Behind Time",
-      "featured": false,
-      "cover": "/assets/uploads/co.jpg",
+      "featured": true,
+      "cover": "/assets/uploads/icon2.png",
       "genre": "Mystery / Psychological Thriller",
       "format": "Chat-Based Game",
       "status": "Completed",
