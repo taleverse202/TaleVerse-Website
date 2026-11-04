@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,6 +67,7 @@
       color: var(--text);
       font-size: 1.2rem;
       line-height: 1.9;
+      white-space: pre-line;
     }
 
     .game-status {
@@ -217,6 +219,14 @@
       box-shadow: 0 0 18px #c9a24b35;
     }
 
+    /* FEATURES */
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+
     /* DOWNLOAD SECTION */
 
     .download-section {
@@ -289,11 +299,10 @@
         gap: 8px;
       }
     }
-
   </style>
 </head>
 
-<body>
+<body data-game="behind-time">
 
 <!-- HEADER -->
 
@@ -314,7 +323,6 @@
   </div>
 </header>
 
-
 <main>
 
   <!-- GAME INTRODUCTION -->
@@ -324,7 +332,7 @@
 
       <div class="game-label">A TaleVerse Game</div>
 
-      <h1>Behind Time</h1>
+      <h1 id="game-title">Behind Time</h1>
 
       <div class="game-subtitle">
         Some disappearances are only the beginning.
@@ -334,15 +342,9 @@
         COMPLETE GAME · ALL CHAPTERS AVAILABLE
       </div>
 
-      <p class="game-description">
+      <p class="game-description" id="game-description">
         Emma has disappeared, leaving behind questions that refuse
         to stay unanswered.
-
-        As the search for the truth unfolds, hidden details begin
-        to surface, and every discovery brings new questions.
-
-        What really happened to Emma? And how much of the truth
-        has been left behind?
       </p>
 
       <div class="game-buttons">
@@ -352,7 +354,6 @@
 
     </div>
   </section>
-
 
   <!-- PROMOTIONAL VIDEO -->
 
@@ -365,21 +366,16 @@
         Take a first look into the mystery of Behind Time.
       </p>
 
-      <div class="video-frame">
-
-        <!-- YOUTUBE VIDEO WILL BE ADDED HERE -->
-
+      <div class="video-frame" id="video-content">
         <div class="video-placeholder">
           <span>▶</span>
           <p>Behind Time Official Trailer</p>
           <small>Promotional video coming soon</small>
         </div>
-
       </div>
 
     </div>
   </section>
-
 
   <!-- SCREENSHOTS -->
 
@@ -395,55 +391,23 @@
 
       <div class="screenshot-gallery">
 
-        <!-- MAIN SCREENSHOT -->
-
         <div class="screenshot-main" id="screenshot-main">
           <img
             id="main-screenshot"
-            src="/assets/uploads/behind-time-01.jpg"
-            alt="Behind Time screenshot 1"
+            src=""
+            alt="Behind Time screenshot"
           >
         </div>
 
-        <!-- SCREENSHOT THUMBNAILS -->
-
-        <div class="screenshot-thumbnails">
-
-          <button class="screenshot-thumb active"
-                  type="button"
-                  data-image="/assets/uploads/behind-time-01.jpg"
-                  aria-label="Show screenshot 1">
-            <img src="/assets/uploads/behind-time-01.jpg" alt="">
-          </button>
-
-          <button class="screenshot-thumb"
-                  type="button"
-                  data-image="/assets/uploads/behind-time-02.jpg"
-                  aria-label="Show screenshot 2">
-            <img src="/assets/uploads/behind-time-02.jpg" alt="">
-          </button>
-
-          <button class="screenshot-thumb"
-                  type="button"
-                  data-image="/assets/uploads/behind-time-03.jpg"
-                  aria-label="Show screenshot 3">
-            <img src="/assets/uploads/behind-time-03.jpg" alt="">
-          </button>
-
-          <button class="screenshot-thumb"
-                  type="button"
-                  data-image="/assets/uploads/behind-time-04.jpg"
-                  aria-label="Show screenshot 4">
-            <img src="/assets/uploads/behind-time-04.jpg" alt="">
-          </button>
-
+        <div
+          class="screenshot-thumbnails"
+          id="screenshot-thumbnails">
         </div>
 
       </div>
 
     </div>
   </section>
-
 
   <!-- GAME FEATURES -->
 
@@ -456,33 +420,10 @@
         Discover what makes Behind Time an experience worth entering.
       </p>
 
-      <div class="feature-grid">
-
-        <div class="feature-item">
-          <h3>Story-Driven Experience</h3>
-          <p>Discover a mystery that unfolds through conversations and hidden details.</p>
-        </div>
-
-        <div class="feature-item">
-          <h3>Chat-Based Gameplay</h3>
-          <p>Experience the story through messages, conversations, and digital interactions.</p>
-        </div>
-
-        <div class="feature-item">
-          <h3>Mystery and Suspense</h3>
-          <p>Follow the clues and uncover the truth behind Emma's disappearance.</p>
-        </div>
-
-        <div class="feature-item">
-          <h3>Complete Story</h3>
-          <p>All chapters are available. Experience the full story from beginning to end.</p>
-        </div>
-
-      </div>
+      <div class="feature-grid" id="features-list"></div>
 
     </div>
   </section>
-
 
   <!-- HOW TO PLAY -->
 
@@ -495,33 +436,10 @@
         Your journey into Behind Time starts with a few simple steps.
       </p>
 
-      <div class="feature-grid">
-
-        <div class="feature-item">
-          <h3>01. Choose Your Platform</h3>
-          <p>Download the game using one of the available platforms below.</p>
-        </div>
-
-        <div class="feature-item">
-          <h3>02. Start the Game</h3>
-          <p>Open Behind Time and begin your journey into Emma's disappearance.</p>
-        </div>
-
-        <div class="feature-item">
-          <h3>03. Explore the Conversations</h3>
-          <p>Read messages, follow conversations, and pay attention to the details.</p>
-        </div>
-
-        <div class="feature-item">
-          <h3>04. Uncover the Truth</h3>
-          <p>Follow the story until the mystery begins to reveal itself.</p>
-        </div>
-
-      </div>
+      <div class="feature-grid" id="how-to-play-list"></div>
 
     </div>
   </section>
-
 
   <!-- DOWNLOAD LINKS -->
 
@@ -536,37 +454,13 @@
         Choose your platform and dive into the mystery.
       </p>
 
-      <div class="platform-links">
-
-        <a class="btn solid"
-           href="https://gamejolt.com/games/behindTime/989011"
-           target="_blank"
-           rel="noopener noreferrer">
-          GAME JOLT
-        </a>
-
-        <a class="btn"
-           href="https://appgallery.huawei.com/app/C116496701"
-           target="_blank"
-           rel="noopener noreferrer">
-          HUAWEI APPGALLERY
-        </a>
-
-        <a class="btn"
-           href="https://apkpure.com/p/com.taleverse.behindtime"
-           target="_blank"
-           rel="noopener noreferrer">
-          APKPURE
-        </a>
-
-      </div>
+      <div class="platform-links" id="platform-links"></div>
 
     </div>
 
   </section>
 
 </main>
-
 
 <!-- FOOTER -->
 
@@ -593,86 +487,6 @@
 
   </div>
 </footer>
-
-
-<!-- SCREENSHOT GALLERY SCRIPT -->
-
-<script>
-
-document.addEventListener("DOMContentLoaded", () => {
-  const mainImage = document.getElementById("main-screenshot");
-  const mainContainer = document.getElementById("screenshot-main");
-  const thumbnails = Array.from(
-    document.querySelectorAll(".screenshot-thumb")
-  );
-
-  if (!mainImage || !mainContainer || thumbnails.length === 0) return;
-
-  const SLIDE_DELAY = 4000; // 4 seconds
-  const FADE_TIME = 350;    // must match the CSS fade
-
-  let currentIndex = 0;
-  let slideTimer;
-  let isChanging = false;
-
-  function showScreenshot(index) {
-    if (isChanging || index === currentIndex) return;
-
-    const thumbnail = thumbnails[index];
-    const imagePath = thumbnail.dataset.image;
-    const newImage = new Image();
-
-    newImage.onload = () => {
-      isChanging = true;
-      mainImage.classList.add("changing");
-
-      setTimeout(() => {
-        mainImage.src = imagePath;
-        mainImage.alt = thumbnail.getAttribute("aria-label") || "Behind Time screenshot";
-
-        thumbnails.forEach(item => item.classList.remove("active"));
-        thumbnail.classList.add("active");
-
-        mainImage.classList.remove("changing");
-        currentIndex = index;
-        isChanging = false;
-      }, FADE_TIME);
-    };
-
-    newImage.onerror = () => {
-      console.error("Could not load screenshot:", imagePath);
-    };
-
-    newImage.src = imagePath;
-  }
-
-  function nextScreenshot() {
-    const nextIndex = (currentIndex + 1) % thumbnails.length;
-    showScreenshot(nextIndex);
-  }
-
-  function startSlideshow() {
-    clearInterval(slideTimer);
-    slideTimer = setInterval(nextScreenshot, SLIDE_DELAY);
-  }
-
-  // Click on a small image: show it on the big one and restart the 4s timer
-  thumbnails.forEach((thumbnail, index) => {
-    thumbnail.addEventListener("click", () => {
-      showScreenshot(index);
-      startSlideshow();
-    });
-  });
-
-  // Click on the big image: open it in a new tab
-  mainContainer.addEventListener("click", () => {
-    window.open(mainImage.src, "_blank", "noopener");
-  });
-
-  startSlideshow();
-});
-
-</script>
 
 <script src="/assets/app.js"></script>
 
