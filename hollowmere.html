@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,6 +66,7 @@
       color: var(--text);
       font-size: 1.2rem;
       line-height: 1.9;
+      white-space: pre-line;
     }
 
     .game-status {
@@ -321,7 +323,7 @@
   </style>
 </head>
 
-<body>
+<body data-game="hollowmere">
 
 <!-- HEADER -->
 
@@ -342,7 +344,6 @@
   </div>
 </header>
 
-
 <main>
 
   <!-- GAME INTRODUCTION -->
@@ -352,7 +353,7 @@
 
       <div class="game-label">A TaleVerse Game</div>
 
-      <h1>Hollowmere</h1>
+      <h1 id="game-title">Hollowmere</h1>
 
       <div class="game-subtitle">
         Some places don't let go of their secrets.
@@ -362,7 +363,7 @@
         CHAPTER 2 RELEASED · CHAPTER 3 IN DEVELOPMENT
       </div>
 
-      <p class="game-description">
+      <p class="game-description" id="game-description">
         Welcome to Hollowmere, a town where strange things are
         happening and the truth is buried deeper than anyone
         wants to admit.
@@ -383,7 +384,6 @@
     </div>
   </section>
 
-
   <!-- PROMOTIONAL VIDEO -->
 
   <section class="game-section" id="trailer">
@@ -395,21 +395,16 @@
         Take a first look into the secrets hidden beneath Hollowmere.
       </p>
 
-      <div class="video-frame">
-
-        <!-- YOUTUBE VIDEO WILL BE ADDED HERE -->
-
+      <div class="video-frame" id="video-content">
         <div class="video-placeholder">
           <span>▶</span>
           <p>Hollowmere Official Trailer</p>
           <small>Promotional video coming soon</small>
         </div>
-
       </div>
 
     </div>
   </section>
-
 
   <!-- SCREENSHOTS -->
 
@@ -425,55 +420,23 @@
 
       <div class="screenshot-gallery">
 
-        <!-- MAIN SCREENSHOT -->
-
         <div class="screenshot-main" id="screenshot-main">
           <img
             id="main-screenshot"
-            src="/assets/uploads/hollowmere-01.jpg"
-            alt="Hollowmere screenshot 1"
+            src=""
+            alt="Hollowmere screenshot"
           >
         </div>
 
-        <!-- SCREENSHOT THUMBNAILS -->
-
-        <div class="screenshot-thumbnails">
-
-          <button class="screenshot-thumb active"
-                  type="button"
-                  data-image="/assets/uploads/hollowmere-01.jpg"
-                  aria-label="Show screenshot 1">
-            <img src="/assets/uploads/hollowmere-01.jpg" alt="">
-          </button>
-
-          <button class="screenshot-thumb"
-                  type="button"
-                  data-image="/assets/uploads/hollowmere-02.jpg"
-                  aria-label="Show screenshot 2">
-            <img src="/assets/uploads/hollowmere-02.jpg" alt="">
-          </button>
-
-          <button class="screenshot-thumb"
-                  type="button"
-                  data-image="/assets/uploads/hollowmere-03.jpg"
-                  aria-label="Show screenshot 3">
-            <img src="/assets/uploads/hollowmere-03.jpg" alt="">
-          </button>
-
-          <button class="screenshot-thumb"
-                  type="button"
-                  data-image="/assets/uploads/hollowmere-04.jpg"
-                  aria-label="Show screenshot 4">
-            <img src="/assets/uploads/hollowmere-04.jpg" alt="">
-          </button>
-
+        <div
+          class="screenshot-thumbnails"
+          id="screenshot-thumbnails">
         </div>
 
       </div>
 
     </div>
   </section>
-
 
   <!-- GAME FEATURES -->
 
@@ -487,33 +450,10 @@
         may change what you thought you knew.
       </p>
 
-      <div class="feature-grid">
-
-        <div class="feature-item">
-          <h3>Story-Driven Mystery</h3>
-          <p>Uncover a dark, unfolding mystery through conversations and discoveries.</p>
-        </div>
-
-        <div class="feature-item">
-          <h3>Chat-Based Gameplay</h3>
-          <p>Experience the story through messages, calls, and digital interactions.</p>
-        </div>
-
-        <div class="feature-item">
-          <h3>Hidden Clues and Puzzles</h3>
-          <p>Search through records, investigate details, and connect the clues.</p>
-        </div>
-
-        <div class="feature-item">
-          <h3>A Living Town</h3>
-          <p>Meet residents with their own secrets, motives, and versions of the truth.</p>
-        </div>
-
-      </div>
+      <div class="feature-grid" id="features-list"></div>
 
     </div>
   </section>
-
 
   <!-- HOW TO PLAY -->
 
@@ -527,33 +467,10 @@
         is up to you.
       </p>
 
-      <div class="feature-grid">
-
-        <div class="feature-item">
-          <h3>01. Enter Hollowmere</h3>
-          <p>Download the game and begin your journey into the town.</p>
-        </div>
-
-        <div class="feature-item">
-          <h3>02. Meet the Residents</h3>
-          <p>Talk to the people of Hollowmere and discover what they know.</p>
-        </div>
-
-        <div class="feature-item">
-          <h3>03. Investigate the Clues</h3>
-          <p>Explore messages, files, records, and hidden information.</p>
-        </div>
-
-        <div class="feature-item">
-          <h3>04. Piece Together the Truth</h3>
-          <p>Connect what you find and decide what to believe.</p>
-        </div>
-
-      </div>
+      <div class="feature-grid" id="how-to-play-list"></div>
 
     </div>
   </section>
-
 
   <!-- DOWNLOAD LINKS -->
 
@@ -568,15 +485,7 @@
         Start your journey into Hollowmere today.
       </p>
 
-      <div class="platform-links">
-
-        <!-- ADD HOLLOWMERE GAME LINKS HERE -->
-
-        <a class="btn solid" href="#download">
-          PLAY HOLLOWMERE
-        </a>
-
-      </div>
+      <div class="platform-links" id="platform-links"></div>
 
       <p style="font-size:.9rem;margin-top:1.5rem">
         More chapters are in development.
@@ -587,7 +496,6 @@
   </section>
 
 </main>
-
 
 <!-- FOOTER -->
 
@@ -614,86 +522,6 @@
 
   </div>
 </footer>
-
-
-<!-- SCREENSHOT GALLERY SCRIPT -->
-
-<script>
-
-document.addEventListener("DOMContentLoaded", () => {
-  const mainImage = document.getElementById("main-screenshot");
-  const mainContainer = document.getElementById("screenshot-main");
-  const thumbnails = Array.from(
-    document.querySelectorAll(".screenshot-thumb")
-  );
-
-  if (!mainImage || !mainContainer || thumbnails.length === 0) return;
-
-  const SLIDE_DELAY = 4000; // 4 seconds
-  const FADE_TIME = 350;    // must match the CSS fade
-
-  let currentIndex = 0;
-  let slideTimer;
-  let isChanging = false;
-
-  function showScreenshot(index) {
-    if (isChanging || index === currentIndex) return;
-
-    const thumbnail = thumbnails[index];
-    const imagePath = thumbnail.dataset.image;
-    const newImage = new Image();
-
-    newImage.onload = () => {
-      isChanging = true;
-      mainImage.classList.add("changing");
-
-      setTimeout(() => {
-        mainImage.src = imagePath;
-        mainImage.alt = thumbnail.getAttribute("aria-label") || "Hollowmere screenshot";
-
-        thumbnails.forEach(item => item.classList.remove("active"));
-        thumbnail.classList.add("active");
-
-        mainImage.classList.remove("changing");
-        currentIndex = index;
-        isChanging = false;
-      }, FADE_TIME);
-    };
-
-    newImage.onerror = () => {
-      console.error("Could not load screenshot:", imagePath);
-    };
-
-    newImage.src = imagePath;
-  }
-
-  function nextScreenshot() {
-    const nextIndex = (currentIndex + 1) % thumbnails.length;
-    showScreenshot(nextIndex);
-  }
-
-  function startSlideshow() {
-    clearInterval(slideTimer);
-    slideTimer = setInterval(nextScreenshot, SLIDE_DELAY);
-  }
-
-  // Click on a small image: show it on the big one and restart the 4s timer
-  thumbnails.forEach((thumbnail, index) => {
-    thumbnail.addEventListener("click", () => {
-      showScreenshot(index);
-      startSlideshow();
-    });
-  });
-
-  // Click on the big image: open it in a new tab
-  mainContainer.addEventListener("click", () => {
-    window.open(mainImage.src, "_blank", "noopener");
-  });
-
-  startSlideshow();
-});
-
-</script>
 
 <script src="/assets/app.js"></script>
 
