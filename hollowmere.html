@@ -220,12 +220,25 @@
     }
 
     /* FEATURES */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .6rem;
+}
 
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.2rem;
-    }
+.feature-grid .feature-item {
+  padding: 1rem 1.2rem;
+}
+
+.feature-grid .feature-item h3 {
+  font-size: 1rem;
+  margin-bottom: .4rem;
+}
+
+.feature-grid .feature-item p {
+  font-size: .9rem;
+  line-height: 1.5;
+}
 
     /* DOWNLOAD SECTION */
 
