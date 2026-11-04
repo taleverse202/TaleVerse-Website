@@ -1,0 +1,40 @@
+:root{--bg:#0a0a0b;--panel:#141416;--line:#2a2620;--gold:#c9a24b;--gold2:#e6c878;--text:#ece7dc;--mute:#9b958a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(ellipse at 50% -10%,#1d1810 0,var(--bg) 55%) fixed;color:var(--text);font:1.05rem/1.7 "Cormorant Garamond",Georgia,serif}
+h1,h2,h3,.brand{font-family:"Cinzel","Times New Roman",serif;font-weight:500;letter-spacing:.04em;line-height:1.2}
+a{color:var(--gold2)}a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.25rem}
+header{border-bottom:1px solid var(--line);position:sticky;top:0;background:#0a0a0bee;backdrop-filter:blur(6px);z-index:5}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{display:flex;align-items:center;gap:.6rem;color:var(--gold);text-decoration:none;font-size:1.3rem}
+.brand svg{width:30px;height:30px}
+nav a{color:var(--text);text-decoration:none;margin-left:1.5rem;padding:.3rem 0;border-bottom:1px solid transparent}
+nav a:hover,nav a[aria-current]{border-color:var(--gold);color:var(--gold2)}
+.hero{text-align:center;padding:7rem 0 5rem}
+.hero .logo svg{width:96px;height:96px;filter:drop-shadow(0 0 22px #c9a24b55)}
+.hero h1{font-size:clamp(2.6rem,8vw,5rem);margin:1rem 0 .3rem;color:var(--gold)}
+.tag{font-size:1.4rem;font-style:italic;color:var(--gold2)}
+.intro{max-width:640px;margin:1.5rem auto 2rem;color:var(--mute)}
+.btn{display:inline-block;padding:.7rem 1.6rem;border:1px solid var(--gold);color:var(--gold2);background:transparent;text-decoration:none;font:500 .95rem "Cinzel",serif;letter-spacing:.08em;cursor:pointer;transition:.25s}
+.btn:hover{background:var(--gold);color:#0a0a0b}.btn.solid{background:var(--gold);color:#0a0a0b}
+section{padding:3.5rem 0}h2{font-size:2rem;color:var(--gold);margin:0 0 1.8rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.6rem}
+.card{background:var(--panel);border:1px solid var(--line);display:flex;flex-direction:column}
+.card .img{aspect-ratio:16/10;background:linear-gradient(135deg,#1a1610,#0d0d0e);display:grid;place-items:center;overflow:hidden}
+.card .img img{width:100%;height:100%;object-fit:cover}.card .img svg{width:56px;opacity:.5}
+.card .body{padding:1.2rem;display:flex;flex-direction:column;gap:.5rem;flex:1}
+.card h3{margin:0;font-size:1.3rem;color:var(--text)}.card p{margin:0;color:var(--mute)}
+.meta{font-size:.9rem;color:var(--gold)}.card .btn{margin-top:auto;text-align:center}
+.card.featured{grid-column:1/-1;flex-direction:row}.card.featured .img{flex:1;aspect-ratio:auto;min-height:260px}.card.featured .body{flex:1;justify-content:center}
+.more{margin-top:1.5rem;text-align:right}
+form{display:grid;gap:1rem;max-width:620px}label{display:grid;gap:.3rem;color:var(--mute)}
+input,textarea{background:var(--panel);border:1px solid var(--line);color:var(--text);padding:.7rem;font:inherit}
+#status{min-height:1.5rem;color:var(--gold2)}.hp{position:absolute;left:-9999px}
+.socials{display:flex;gap:.8rem;flex-wrap:wrap;margin:1rem 0}
+.socials a{display:inline-grid;place-items:center;width:44px;height:44px;border:1px solid var(--line);border-radius:50%;color:var(--gold);transition:.25s}
+.socials a:hover{border-color:var(--gold);background:#c9a24b22}.socials svg{width:20px;height:20px;fill:currentColor}
+footer{border-top:1px solid var(--line);padding:2.5rem 0;text-align:center;color:var(--mute)}
+dialog{max-width:700px;width:92%;background:var(--panel);color:var(--text);border:1px solid var(--gold);padding:2rem}
+dialog::backdrop{background:#000c}dialog img{max-width:100%}
+@media(max-width:720px){nav a{margin-left:.9rem}.card.featured{flex-direction:column}.hero{padding:4rem 0 3rem}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}

@@ -1,0 +1,59 @@
+media:
+  input: assets/uploads
+  output: /assets/uploads
+content:
+  - name: games
+    label: Games
+    type: file
+    path: content/games.json
+    fields:
+      - name: games
+        label: Games
+        type: object
+        list: true
+        fields:
+          - {name: title, label: Title, type: string}
+          - {name: featured, label: Show on homepage, type: boolean}
+          - {name: cover, label: Cover image, type: image}
+          - {name: genre, label: Genre, type: string}
+          - {name: format, label: Format, type: string}
+          - {name: status, label: Development status, type: string}
+          - {name: description, label: Description, type: text}
+          - {name: chapters, label: Chapters / release info, type: string}
+          - {name: button_label, label: Button text, type: string}
+          - {name: link, label: Download or store link, type: string}
+  - name: news
+    label: News
+    type: file
+    path: content/news.json
+    fields:
+      - name: articles
+        label: Articles
+        type: object
+        list: true
+        fields:
+          - {name: title, label: Title, type: string}
+          - {name: date, label: Publication date, type: date}
+          - {name: cover, label: Cover image, type: image}
+          - {name: summary, label: Short description, type: text}
+          - {name: body, label: Full article (blank line between paragraphs), type: text}
+          - {name: link, label: Optional external link, type: string}
+          - {name: link_label, label: Link text, type: string}
+  - name: site
+    label: Site settings
+    type: file
+    path: content/site.json
+    fields:
+      - {name: tagline, label: Tagline, type: string}
+      - {name: intro, label: Homepage introduction, type: text}
+      - {name: contact_intro, label: Contact page message, type: text}
+      - {name: footer_note, label: Footer text, type: string}
+      - {name: form_access_key, label: Web3Forms access key, type: string}
+      - {name: form_endpoint, label: Form endpoint, type: string}
+      - name: socials
+        label: Social links
+        type: object
+        list: true
+        fields:
+          - {name: name, label: Platform (Facebook, Instagram, TikTok, Game Jolt), type: string}
+          - {name: url, label: URL, type: string}

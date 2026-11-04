@@ -1,0 +1,14 @@
+{
+  "tagline": "Where Stories Come Alive",
+  "intro": "TaleVerse creates immersive English chat-based games where every conversation hides a secret, every decision matters, and every story has something waiting beneath the surface.",
+  "contact_intro": "Questions, feedback, or a theory about what's beneath the surface? Write to us. Every message is read.",
+  "form_endpoint": "https://api.web3forms.com/submit",
+  "form_access_key": "PASTE_YOUR_WEB3FORMS_ACCESS_KEY",
+  "footer_note": "© TaleVerse. All rights reserved.",
+  "socials": [
+    {"name": "Facebook", "url": "https://www.facebook.com/taleverse20"},
+    {"name": "Instagram", "url": "https://www.instagram.com/taleverse20/"},
+    {"name": "TikTok", "url": "https://www.tiktok.com/@taleverse6"},
+    {"name": "Game Jolt", "url": "https://gamejolt.com/@TaleVerse"}
+  ]
+}
