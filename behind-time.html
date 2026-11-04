@@ -599,51 +599,71 @@
 <!-- SCREENSHOT GALLERY SCRIPT -->
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
 
+document.addEventListener("DOMContentLoaded", () => {
   const mainImage = document.getElementById("main-screenshot");
   const mainContainer = document.getElementById("screenshot-main");
-  const thumbnails = document.querySelectorAll(".screenshot-thumb");
+  const thumbnails = Array.from(
+    document.querySelectorAll(".screenshot-thumb")
+  );
 
-  if (!mainImage || !mainContainer || !thumbnails.length) return;
+  if (!mainImage || !mainContainer || thumbnails.length === 0) return;
 
-  thumbnails.forEach((thumbnail) => {
+  let currentIndex = 0;
+  let slideTimer;
 
-    thumbnail.addEventListener("click", () => {
+  function showScreenshot(index) {
+    const thumbnail = thumbnails[index];
+    const imagePath = thumbnail.dataset.image;
 
-      const imagePath = thumbnail.dataset.image;
+    const newImage = new Image();
 
-      if (mainImage.getAttribute("src") === imagePath) return;
-
-      thumbnails.forEach(item => item.classList.remove("active"));
-      thumbnail.classList.add("active");
-
+    newImage.onload = () => {
       mainImage.classList.add("changing");
 
-      const newImage = new Image();
-
-      newImage.onload = () => {
+      setTimeout(() => {
         mainImage.src = imagePath;
         mainImage.alt = thumbnail.getAttribute("aria-label") || "Behind Time screenshot";
+
+        thumbnails.forEach(item => item.classList.remove("active"));
+        thumbnail.classList.add("active");
+
         mainImage.classList.remove("changing");
-      };
+        currentIndex = index;
+      }, 350);
+    };
 
-      newImage.onerror = () => {
-        mainImage.classList.remove("changing");
-        console.error("Could not load screenshot:", imagePath);
-      };
+    newImage.onerror = () => {
+      console.error("Could not load screenshot:", imagePath);
+    };
 
-      newImage.src = imagePath;
+    newImage.src = imagePath;
+  }
 
+  function nextScreenshot() {
+    const nextIndex = (currentIndex + 1) % thumbnails.length;
+    showScreenshot(nextIndex);
+  }
+
+  function startSlideshow() {
+    clearInterval(slideTimer);
+    slideTimer = setInterval(nextScreenshot, 5000);
+  }
+
+  thumbnails.forEach((thumbnail, index) => {
+    thumbnail.addEventListener("click", () => {
+      showScreenshot(index);
+      startSlideshow();
     });
-
   });
 
   mainContainer.addEventListener("click", () => {
     window.open(mainImage.src, "_blank", "noopener");
   });
 
+  startSlideshow();
 });
+
 </script>
 
 <script src="/assets/app.js"></script>
