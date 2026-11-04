@@ -14,7 +14,7 @@
     },
     {
       "title": "Behind Time",
-      "featured": true,
+      "featured": false,
       "cover": "/assets/uploads/co.jpg",
       "genre": "Mystery / Psychological Thriller",
       "format": "Chat-Based Game",
