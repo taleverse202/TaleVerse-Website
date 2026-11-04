@@ -1,6 +1,8 @@
+
 media:
   input: assets/uploads
   output: /assets/uploads
+
 content:
   - name: games
     label: Games
@@ -22,6 +24,7 @@ content:
           - {name: chapters, label: Chapters / release info, type: string}
           - {name: button_label, label: Button text, type: string}
           - {name: link, label: Download or store link, type: string}
+
   - name: news
     label: News
     type: file
@@ -39,6 +42,7 @@ content:
           - {name: body, label: Full article (blank line between paragraphs), type: text}
           - {name: link, label: Optional external link, type: string}
           - {name: link_label, label: Link text, type: string}
+
   - name: site
     label: Site settings
     type: file
@@ -57,3 +61,20 @@ content:
         fields:
           - {name: name, label: Platform (Facebook, Instagram, TikTok, Game Jolt), type: string}
           - {name: url, label: URL, type: string}
+
+  - name: privacy
+    label: Privacy Policy
+    type: file
+    path: content/privacy.json
+    fields:
+      - {name: title, label: Page title, type: string}
+      - {name: last_updated, label: Last updated, type: date}
+      - {name: introduction, label: Introduction, type: text}
+      - name: sections
+        label: Policy sections
+        type: object
+        list: true
+        fields:
+          - {name: heading, label: Section heading, type: string}
+          - {name: body, label: Section content, type: text}
+      - {name: contact_text, label: Contact information, type: text}
