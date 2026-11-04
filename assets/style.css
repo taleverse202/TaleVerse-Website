@@ -1,8 +1,9 @@
+
 :root {
-  --bg: #09090b;
-  --panel: #121216;
-  --panel-hover: #19191f;
-  --line: #29272a;
+  --bg: #0c0b0d;
+  --panel: #151318;
+  --panel-hover: #1d1920;
+  --line: #332b30;
   --gold: #c9a24b;
   --gold2: #f0d58b;
   --text: #eeeae2;
@@ -21,8 +22,28 @@ html {
 body {
   margin: 0;
   background:
-    radial-gradient(ellipse at 50% -15%, #292013 0%, transparent 48%),
-    var(--bg);
+    radial-gradient(
+      ellipse at 50% -10%,
+      #49351b55 0%,
+      #29201330 25%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse at 0% 45%,
+      #38232b20 0%,
+      transparent 45%
+    ),
+    radial-gradient(
+      ellipse at 100% 80%,
+      #47351c18 0%,
+      transparent 42%
+    ),
+    linear-gradient(
+      135deg,
+      #100e11 0%,
+      #0c0b0d 45%,
+      #100d10 100%
+    );
   background-attachment: fixed;
   color: var(--text);
   font: 1rem/1.75 "Cormorant Garamond", Georgia, serif;
@@ -56,13 +77,14 @@ textarea:focus-visible {
 /* HEADER */
 
 header {
-  border-bottom: 1px solid #ffffff10;
+  border-bottom: 1px solid #c9a24b20;
   position: sticky;
   top: 0;
-  background: #09090bed;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: #100e11e8;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   z-index: 5;
+  box-shadow: 0 5px 25px #0003;
 }
 
 header .wrap {
@@ -123,14 +145,14 @@ nav a[aria-current] {
 .hero .logo svg {
   width: 104px;
   height: 104px;
-  filter: drop-shadow(0 0 25px #c9a24b55);
+  filter: drop-shadow(0 0 25px #c9a24b66);
 }
 
 .hero h1 {
   font-size: clamp(2.8rem, 8vw, 5.5rem);
   margin: 1.2rem 0 .4rem;
   color: var(--gold2);
-  text-shadow: 0 0 35px #c9a24b20;
+  text-shadow: 0 0 35px #c9a24b30;
 }
 
 .tag {
@@ -156,7 +178,7 @@ nav a[aria-current] {
   border: 1px solid #c9a24b80;
   border-radius: 3px;
   color: var(--gold2);
-  background: #c9a24b08;
+  background: #c9a24b0c;
   text-decoration: none;
   font: 500 .88rem "Cinzel", serif;
   letter-spacing: .09em;
@@ -207,7 +229,11 @@ h2 {
 /* GAME CARDS */
 
 .card {
-  background: linear-gradient(145deg, #17171c, #101014);
+  background: linear-gradient(
+    145deg,
+    #1b171c,
+    #121015
+  );
   border: 1px solid var(--line);
   border-radius: 5px;
   overflow: hidden;
@@ -237,7 +263,7 @@ h2 {
   overflow: hidden;
   display: grid;
   place-items: center;
-  background: #0b0b0e;
+  background: #0d0b0e;
 }
 
 .card .img img {
@@ -326,7 +352,7 @@ label {
 input,
 textarea {
   width: 100%;
-  background: var(--panel);
+  background: #151318;
   border: 1px solid var(--line);
   border-radius: 3px;
   color: var(--text);
@@ -394,11 +420,16 @@ textarea {
 /* FOOTER */
 
 footer {
-  border-top: 1px solid var(--line);
+  border-top: 1px solid #c9a24b25;
   padding: 3rem 0;
   text-align: center;
   color: var(--mute);
   margin-top: 2rem;
+  background: linear-gradient(
+    180deg,
+    #100e1100,
+    #100e116e
+  );
 }
 
 /* DIALOG */
