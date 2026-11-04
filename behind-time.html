@@ -147,59 +147,75 @@
       border: 0;
     }
 
-    /* SCREENSHOTS */
+    /* SCREENSHOT GALLERY */
 
-    .screenshots-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.2rem;
+    .screenshot-gallery {
+      max-width: 1050px;
+      margin: 2.5rem auto 0;
     }
 
-    .screenshot-placeholder {
+    .screenshot-main {
+      position: relative;
+      width: 100%;
       aspect-ratio: 16 / 9;
-      background: rgba(15, 12, 16, .85);
-      border: 1px solid var(--line);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--mute);
       overflow: hidden;
+      background: rgba(15, 12, 16, .9);
+      border: 1px solid var(--line);
+      box-shadow: 0 15px 50px #0009;
+      cursor: zoom-in;
     }
 
-    .screenshot-placeholder img {
+    .screenshot-main img {
       width: 100%;
       height: 100%;
+      object-fit: contain;
+      display: block;
+      opacity: 1;
+      transform: scale(1);
+      transition: opacity .35s ease, transform .5s ease;
+    }
+
+    .screenshot-main img.changing {
+      opacity: 0;
+      transform: scale(1.025);
+    }
+
+    .screenshot-thumbnails {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .screenshot-thumb {
+      width: 125px;
+      aspect-ratio: 16 / 9;
+      padding: 0;
+      overflow: hidden;
+      cursor: pointer;
+      background: #100d12;
+      border: 1px solid var(--line);
+      opacity: .55;
+      transition: opacity .3s ease, border-color .3s ease, transform .3s ease;
+    }
+
+    .screenshot-thumb img {
+      width: 100%;
+      height: 100%;
+      display: block;
       object-fit: cover;
     }
 
-    /* FEATURES AND HOW TO PLAY */
-
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.2rem;
+    .screenshot-thumb:hover {
+      opacity: .9;
+      transform: translateY(-3px);
     }
 
-    .feature-item {
-      background: rgba(15, 12, 16, .85);
-      border: 1px solid var(--line);
-      padding: 1.5rem;
-      transition: border-color .3s ease;
-    }
-
-    .feature-item:hover {
-      border-color: #c9a24b80;
-    }
-
-    .feature-item h3 {
-      color: var(--gold2);
-      font-size: 1.15rem;
-      margin: 0 0 .5rem;
-    }
-
-    .feature-item p {
-      color: var(--mute);
-      margin: 0;
+    .screenshot-thumb.active {
+      opacity: 1;
+      border: 2px solid var(--gold);
+      box-shadow: 0 0 18px #c9a24b35;
     }
 
     /* DOWNLOAD SECTION */
@@ -235,6 +251,8 @@
       min-width: 190px;
     }
 
+    /* MOBILE */
+
     @media (max-width: 720px) {
       .game-hero {
         min-height: 480px;
@@ -245,7 +263,6 @@
         padding: 3rem 0;
       }
 
-      .screenshots-grid,
       .feature-grid {
         grid-template-columns: 1fr;
       }
@@ -264,7 +281,16 @@
         width: 100%;
         max-width: 300px;
       }
+
+      .screenshot-thumb {
+        width: 85px;
+      }
+
+      .screenshot-thumbnails {
+        gap: 8px;
+      }
     }
+
   </style>
 </head>
 
@@ -281,7 +307,8 @@
 
     <nav aria-label="Main">
       <a href="/">Home</a>
-      <a href="/games.html" aria-current="page">Games</a>
+      <a href="/behind-time.html" aria-current="page">Behind Time</a>
+      <a href="/hollowmere.html">Hollowmere</a>
       <a href="/news.html">News</a>
       <a href="/contact.html">Contact</a>
     </nav>
@@ -367,26 +394,50 @@
         and moments waiting inside the game.
       </p>
 
-      <div class="screenshots-grid">
+      <div class="screenshot-gallery">
 
-        <!-- GAME SCREENSHOT 1 -->
-        <div class="screenshot-placeholder">
-          <span>Screenshot 01</span>
+        <!-- MAIN SCREENSHOT -->
+
+        <div class="screenshot-main" id="screenshot-main">
+          <img
+            id="main-screenshot"
+            src="/assets/uploads/behind-time-01.jpg"
+            alt="Behind Time screenshot 1"
+          >
         </div>
 
-        <!-- GAME SCREENSHOT 2 -->
-        <div class="screenshot-placeholder">
-          <span>Screenshot 02</span>
-        </div>
+        <!-- SCREENSHOT THUMBNAILS -->
 
-        <!-- GAME SCREENSHOT 3 -->
-        <div class="screenshot-placeholder">
-          <span>Screenshot 03</span>
-        </div>
+        <div class="screenshot-thumbnails">
 
-        <!-- GAME SCREENSHOT 4 -->
-        <div class="screenshot-placeholder">
-          <span>Screenshot 04</span>
+          <button class="screenshot-thumb active"
+                  type="button"
+                  data-image="/assets/uploads/behind-time-01.jpg"
+                  aria-label="Show screenshot 1">
+            <img src="/assets/uploads/behind-time-01.jpg" alt="">
+          </button>
+
+          <button class="screenshot-thumb"
+                  type="button"
+                  data-image="/assets/uploads/behind-time-02.jpg"
+                  aria-label="Show screenshot 2">
+            <img src="/assets/uploads/behind-time-02.jpg" alt="">
+          </button>
+
+          <button class="screenshot-thumb"
+                  type="button"
+                  data-image="/assets/uploads/behind-time-03.jpg"
+                  aria-label="Show screenshot 3">
+            <img src="/assets/uploads/behind-time-03.jpg" alt="">
+          </button>
+
+          <button class="screenshot-thumb"
+                  type="button"
+                  data-image="/assets/uploads/behind-time-04.jpg"
+                  aria-label="Show screenshot 4">
+            <img src="/assets/uploads/behind-time-04.jpg" alt="">
+          </button>
+
         </div>
 
       </div>
@@ -407,8 +458,6 @@
       </p>
 
       <div class="feature-grid">
-
-        <!-- FEATURES WILL BE ADDED LATER -->
 
         <div class="feature-item">
           <h3>Story-Driven Experience</h3>
@@ -545,6 +594,57 @@
 
   </div>
 </footer>
+
+
+<!-- SCREENSHOT GALLERY SCRIPT -->
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const mainImage = document.getElementById("main-screenshot");
+  const mainContainer = document.getElementById("screenshot-main");
+  const thumbnails = document.querySelectorAll(".screenshot-thumb");
+
+  if (!mainImage || !mainContainer || !thumbnails.length) return;
+
+  thumbnails.forEach((thumbnail) => {
+
+    thumbnail.addEventListener("click", () => {
+
+      const imagePath = thumbnail.dataset.image;
+
+      if (mainImage.getAttribute("src") === imagePath) return;
+
+      thumbnails.forEach(item => item.classList.remove("active"));
+      thumbnail.classList.add("active");
+
+      mainImage.classList.add("changing");
+
+      const newImage = new Image();
+
+      newImage.onload = () => {
+        mainImage.src = imagePath;
+        mainImage.alt = thumbnail.getAttribute("aria-label") || "Behind Time screenshot";
+        mainImage.classList.remove("changing");
+      };
+
+      newImage.onerror = () => {
+        mainImage.classList.remove("changing");
+        console.error("Could not load screenshot:", imagePath);
+      };
+
+      newImage.src = imagePath;
+
+    });
+
+  });
+
+  mainContainer.addEventListener("click", () => {
+    window.open(mainImage.src, "_blank", "noopener");
+  });
+
+});
+</script>
 
 <script src="/assets/app.js"></script>
 
