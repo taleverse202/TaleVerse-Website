@@ -11,6 +11,18 @@
       "chapters": "Chapter 2: Available. Chapter 3: In Development.",
       "button_label": "Play on Game Jolt",
       "link": "https://gamejolt.com/games/Hollowmere/1024633"
+    },
+    {
+      "title": "Behind Time",
+      "featured": true,
+      "cover": "/assets/uploads/co.jpg",
+      "genre": "Mystery / Psychological Thriller",
+      "format": "Chat-Based Game",
+      "status": "Completed",
+      "description": "Emma has disappeared, leaving behind questions that refuse to stay unanswered.\n\nAs the search for the truth unfolds, hidden details begin to surface, and every discovery brings new questions. What really happened to Emma? And how much of the truth has been left behind?\n\n**Some disappearances are only the beginning.**",
+      "chapters": "Full game released. All chapters available.",
+      "button_label": "Play Now",
+      "link": "https://gamejolt.com/games/behindTime/989011"
     }
   ]
 }
