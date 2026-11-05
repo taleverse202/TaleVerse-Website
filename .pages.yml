@@ -167,4 +167,4 @@ content:
         fields:
           - {name: name, label: Platform name, type: string}
           - {name: url, label: Social profile URL, type: string}
-          - {name: icon, label: Social icon, type: image}
+          - {name: icon, label: Font Awesome icon class, type: string}
