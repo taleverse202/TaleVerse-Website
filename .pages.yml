@@ -151,3 +151,14 @@ content:
           - {name: heading, label: Section heading, type: string}
           - {name: body, label: Section content, type: text}
       - {name: contact_text, label: Contact information, type: text}
+
+  - name: contact
+    label: Contact Page
+    type: file
+    path: content/contact.json
+    fields:
+      - {name: title, label: Page title, type: string}
+      - {name: introduction, label: Introduction, type: text}
+      - {name: email, label: Contact email, type: string}
+      - {name: form_title, label: Form title, type: string}
+      - {name: form_description, label: Form description, type: text}
