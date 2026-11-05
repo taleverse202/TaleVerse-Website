@@ -159,9 +159,7 @@ content:
     fields:
       - {name: title, label: Page title, type: string}
       - {name: introduction, label: Introduction, type: text}
-      - {name: email, label: Contact email, type: string}
-      - {name: form_title, label: Form title, type: string}
-      - {name: form_description, label: Form description, type: text}
+      - {name: socials_title, label: Social links heading, type: string}
       - name: socials
         label: Contact social links
         type: object
@@ -169,3 +167,4 @@ content:
         fields:
           - {name: name, label: Platform name, type: string}
           - {name: url, label: Social profile URL, type: string}
+          - {name: icon, label: Social icon, type: image}
