@@ -1,0 +1,28 @@
+
+{
+  "title": "Contact",
+  "introduction": "Have a question, suggestion, or just want to get in touch? We'd love to hear from you.",
+  "socials_title": "Follow TaleVerse",
+  "socials": [
+    {
+      "name": "Facebook",
+      "url": "https://www.facebook.com/taleverse20",
+      "icon": "/assets/uploads/facebook.svg"
+    },
+    {
+      "name": "Instagram",
+      "url": "https://www.instagram.com/taleverse20/",
+      "icon": "/assets/uploads/instagram.svg"
+    },
+    {
+      "name": "TikTok",
+      "url": "https://www.tiktok.com/@taleverse6",
+      "icon": "/assets/uploads/tiktok.svg"
+    },
+    {
+      "name": "Game Jolt",
+      "url": "https://gamejolt.com/@TaleVerse",
+      "icon": "/assets/uploads/gamejolt.svg"
+    }
+  ]
+}
