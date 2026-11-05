@@ -1,3 +1,4 @@
+
 {
   "tagline": "Where Stories Come Alive",
   "intro": "TaleVerse creates immersive Chat-based games where every conversation hides a secret, every decision matters, and every story has something waiting beneath the surface.",
@@ -18,14 +19,13 @@
       "name": "TikTok",
       "url": "https://www.tiktok.com/@taleverse6"
     },
-        {
+    {
       "name": "YouTube",
       "url": "https://www.youtube.com/@TaleVerse-j2s?app=desktop"
     },
     {
       "name": "Game Jolt",
       "url": "https://gamejolt.com/@TaleVerse"
-    },
-
+    }
   ]
 }
