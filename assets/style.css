@@ -589,3 +589,13 @@ dialog img {
   text-align: center;
   margin: 1.2rem 0 .4rem;
 }
+
+/* CUSTOM CONTACT SOCIAL ICONS */
+
+.socials img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  display: block;
+}
+
