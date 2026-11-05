@@ -18,16 +18,14 @@
       "name": "TikTok",
       "url": "https://www.tiktok.com/@taleverse6"
     },
+        {
+      "name": "YouTube",
+      "url": "https://www.youtube.com/@TaleVerse-j2s?app=desktop"
+    },
     {
       "name": "Game Jolt",
       "url": "https://gamejolt.com/@TaleVerse"
-    }
     },
-    {
-  "name": "YouTube",
-  "url": "https://www.youtube.com/@TaleVerse-j2s?app=desktop"
-}
-    
-    
+
   ]
 }
