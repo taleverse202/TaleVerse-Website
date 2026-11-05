@@ -327,6 +327,52 @@ function renderPrivacy(policy) {
   `;
 }
 
+/* CONTACT PAGE */
+
+function renderContactPage(contact) {
+  const title = $('#contact-title');
+  const introduction = $('#contact-intro');
+  const socialsTitle = $('#contact-socials-title');
+  const socialsContainer = $('[data-contact-socials]');
+
+  if (title) {
+    title.textContent = contact.title || 'Contact';
+  }
+
+  if (introduction) {
+    introduction.textContent = contact.introduction || '';
+  }
+
+  if (socialsTitle) {
+    socialsTitle.textContent = contact.socials_title || 'Follow TaleVerse';
+  }
+
+  if (socialsContainer) {
+    const socials = Array.isArray(contact.socials)
+      ? contact.socials
+      : [];
+
+    socialsContainer.innerHTML = socials.map(social => {
+      const icon = social.icon
+        ? `<img src="${safeUrl(social.icon)}" alt="" loading="lazy">`
+        : `<span aria-hidden="true">${esc((social.name || '?').charAt(0))}</span>`;
+
+      return `
+        <a
+          href="${safeUrl(social.url)}"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="${esc(social.name)}"
+          title="${esc(social.name)}">
+          ${icon}
+        </a>
+      `;
+    }).join('');
+  }
+
+  document.title = (contact.title || 'Contact') + ' | TaleVerse';
+}
+
 /* MAIN INITIALIZATION */
 
 async function init() {
@@ -441,6 +487,17 @@ async function init() {
       renderGamePage(game);
     } catch (error) {
       console.error(gamePage + ' data error:', error);
+    }
+  }
+
+  /* CONTACT PAGE CONTENT */
+
+  if ($('#contact-form')) {
+    try {
+      const contact = await load('contact');
+      renderContactPage(contact);
+    } catch (error) {
+      console.error('Contact page data error:', error);
     }
   }
 
