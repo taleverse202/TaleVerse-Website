@@ -323,6 +323,7 @@ function renderGamePage(game) {
   }
 }
 
+
 /* PRIVACY POLICY */
 
 function renderPrivacy(policy) {
@@ -338,22 +339,41 @@ function renderPrivacy(policy) {
   const sections = (policy.sections || []).map(section => `
     <h2>${esc(section.heading || '')}</h2>
     ${String(section.body || '').split(/\n\s*\n/).filter(Boolean)
-      .map(paragraph => `<p>${esc(paragraph).replace(/\n/g, '<br>')}</p>`)
+      .map(paragraph => `
+        <p>${esc(paragraph).replace(/\n/g, '<br>')}</p>
+      `)
       .join('')}
   `).join('');
 
   container.innerHTML = `
     <section>
       <h1>${esc(title)}</h1>
-      ${updated ? `<p class="meta">Last updated: ${esc(fmt(updated))}</p>` : ''}
-      ${intro ? `<p>${esc(intro).replace(/\n/g, '<br>')}</p>` : ''}
+
+      ${updated ? `
+        <p class="meta">
+          Last updated: ${esc(fmt(updated))}
+        </p>
+      ` : ''}
+
+      ${intro ? `
+        <p class="privacy-intro">
+          ${esc(intro).replace(/\n/g, '<br>')}
+        </p>
+      ` : ''}
+
       ${sections}
-      ${policy.contact_text
-        ? `<h2>Contact Us</h2><p>${esc(policy.contact_text)} <a href="contact.html">Contact Page</a>.</p>`
-        : ''}
+
+      ${policy.contact_text ? `
+        <h2>Contact Us</h2>
+        <p>
+          ${esc(policy.contact_text)}
+          <a href="contact.html">Contact Page</a>.
+        </p>
+      ` : ''}
     </section>
   `;
 }
+
 
 /* CONTACT PAGE */
 
