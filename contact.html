@@ -37,13 +37,17 @@
   </div>
 </header>
 
+
 <main>
   <div class="wrap">
     <section>
 
-      <h2>Contact</h2>
+      <h2 id="contact-title">Contact</h2>
 
-      <p data-site="contact_intro" style="max-width:620px"></p>
+      <p
+        id="contact-intro"
+        style="max-width:620px"
+      ></p>
 
       <form id="contact-form">
         <input type="hidden" name="access_key">
@@ -84,13 +88,16 @@
         <p id="status" role="status" aria-live="polite"></p>
       </form>
 
-      <h2 style="margin-top:3rem">Follow TaleVerse</h2>
+      <h2 id="contact-socials-title" style="margin-top:3rem">
+        Follow TaleVerse
+      </h2>
 
-      <div class="socials"></div>
+      <div class="socials" data-contact-socials></div>
 
     </section>
   </div>
 </main>
+
 
 <footer>
   <div class="wrap">
