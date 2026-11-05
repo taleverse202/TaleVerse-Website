@@ -41,6 +41,29 @@ const fmt = date =>
     year: 'numeric'
   });
 
+/* SOCIAL ICON RENDERING */
+
+function renderSocialIcon(iconClass, name) {
+  const icon = String(iconClass || '').trim();
+
+  // Support existing uploaded image icons.
+  if (/^(https?:\/\/|\/)/i.test(icon)) {
+    return `<img src="${safeUrl(icon)}" alt="" loading="lazy">`;
+  }
+
+  // Support Font Awesome icon classes.
+  if (
+    icon &&
+    /^(fa|fas|far|fab|fa-solid|fa-regular|fa-brands)\s/.test(icon) &&
+    /^[a-zA-Z0-9\s-]+$/.test(icon)
+  ) {
+    return `<i class="${esc(icon)}" aria-hidden="true"></i>`;
+  }
+
+  // Fallback if no valid icon is supplied.
+  return `<span aria-hidden="true">${esc((name || '?').charAt(0))}</span>`;
+}
+
 /* GAME CARDS */
 
 function gameCard(game, featured) {
@@ -353,9 +376,7 @@ function renderContactPage(contact) {
       : [];
 
     socialsContainer.innerHTML = socials.map(social => {
-      const icon = social.icon
-        ? `<img src="${safeUrl(social.icon)}" alt="" loading="lazy">`
-        : `<span aria-hidden="true">${esc((social.name || '?').charAt(0))}</span>`;
+      const icon = renderSocialIcon(social.icon, social.name);
 
       return `
         <a
@@ -395,12 +416,12 @@ async function init() {
     element.textContent = site[element.dataset.site] || '';
   });
 
-  /* SOCIAL LINKS */
+  /* GLOBAL SOCIAL LINKS FROM SITE SETTINGS */
 
-  const socials = (site.socials || []).map(social =>
+  const globalSocials = (site.socials || []).map(social =>
     `<a href="${safeUrl(social.url)}"
         target="_blank"
-        rel="noopener"
+        rel="noopener noreferrer"
         aria-label="${esc(social.name)}"
         title="${esc(social.name)}">
       <svg viewBox="0 0 24 24">
@@ -409,8 +430,9 @@ async function init() {
     </a>`
   ).join('');
 
-  document.querySelectorAll('.socials').forEach(element => {
-    element.innerHTML = socials;
+  // Exclude the Contact page social container.
+  document.querySelectorAll('.socials:not([data-contact-socials])').forEach(element => {
+    element.innerHTML = globalSocials;
   });
 
   /* GAMES */
