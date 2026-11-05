@@ -162,3 +162,10 @@ content:
       - {name: email, label: Contact email, type: string}
       - {name: form_title, label: Form title, type: string}
       - {name: form_description, label: Form description, type: text}
+      - name: socials
+        label: Contact social links
+        type: object
+        list: true
+        fields:
+          - {name: name, label: Platform name, type: string}
+          - {name: url, label: Social profile URL, type: string}
