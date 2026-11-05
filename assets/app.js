@@ -41,27 +41,27 @@ const fmt = date =>
     year: 'numeric'
   });
 
-/* SOCIAL ICON RENDERING */
+/* SHARED SOCIAL ICON RENDERING */
 
-function renderSocialIcon(iconClass, name) {
-  const icon = String(iconClass || '').trim();
+function renderSocialLinks(socials) {
+  if (!Array.isArray(socials)) return '';
 
-  // Support existing uploaded image icons.
-  if (/^(https?:\/\/|\/)/i.test(icon)) {
-    return `<img src="${safeUrl(icon)}" alt="" loading="lazy">`;
-  }
+  return socials.map(social => {
+    const icon = ICONS[social.name] || ICONS['Game Jolt'];
 
-  // Support Font Awesome icon classes.
-  if (
-    icon &&
-    /^(fa|fas|far|fab|fa-solid|fa-regular|fa-brands)\s/.test(icon) &&
-    /^[a-zA-Z0-9\s-]+$/.test(icon)
-  ) {
-    return `<i class="${esc(icon)}" aria-hidden="true"></i>`;
-  }
-
-  // Fallback if no valid icon is supplied.
-  return `<span aria-hidden="true">${esc((name || '?').charAt(0))}</span>`;
+    return `
+      <a
+        href="${safeUrl(social.url)}"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="${esc(social.name)}"
+        title="${esc(social.name)}">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="${icon}"/>
+        </svg>
+      </a>
+    `;
+  }).join('');
 }
 
 /* GAME CARDS */
@@ -356,7 +356,6 @@ function renderContactPage(contact) {
   const title = $('#contact-title');
   const introduction = $('#contact-intro');
   const socialsTitle = $('#contact-socials-title');
-  const socialsContainer = $('[data-contact-socials]');
 
   if (title) {
     title.textContent = contact.title || 'Contact';
@@ -368,27 +367,6 @@ function renderContactPage(contact) {
 
   if (socialsTitle) {
     socialsTitle.textContent = contact.socials_title || 'Follow TaleVerse';
-  }
-
-  if (socialsContainer) {
-    const socials = Array.isArray(contact.socials)
-      ? contact.socials
-      : [];
-
-    socialsContainer.innerHTML = socials.map(social => {
-      const icon = renderSocialIcon(social.icon, social.name);
-
-      return `
-        <a
-          href="${safeUrl(social.url)}"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="${esc(social.name)}"
-          title="${esc(social.name)}">
-          ${icon}
-        </a>
-      `;
-    }).join('');
   }
 
   document.title = (contact.title || 'Contact') + ' | TaleVerse';
@@ -416,22 +394,11 @@ async function init() {
     element.textContent = site[element.dataset.site] || '';
   });
 
-  /* GLOBAL SOCIAL LINKS FROM SITE SETTINGS */
+  /* GLOBAL SOCIAL LINKS: FOOTER + CONTACT */
 
-  const globalSocials = (site.socials || []).map(social =>
-    `<a href="${safeUrl(social.url)}"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="${esc(social.name)}"
-        title="${esc(social.name)}">
-      <svg viewBox="0 0 24 24">
-        <path d="${ICONS[social.name] || ICONS['Game Jolt']}"/>
-      </svg>
-    </a>`
-  ).join('');
+  const globalSocials = renderSocialLinks(site.socials || []);
 
-  // Exclude the Contact page social container.
-  document.querySelectorAll('.socials:not([data-contact-socials])').forEach(element => {
+  document.querySelectorAll('.socials').forEach(element => {
     element.innerHTML = globalSocials;
   });
 
